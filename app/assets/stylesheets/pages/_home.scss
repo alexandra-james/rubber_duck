@@ -1,3 +1,65 @@
-.navbar-brand img {
+// .navbar-brand img {
+//   width: 50px;
+// }
+// .nav-link-active {
+//  border: 2px soid red;
+// }
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-img img {
   width: 50px;
+}
+.navbar-item{
+  padding: 25px;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  border: 1px solid lightgray;
+  border-radius: 14px;
+  padding: 0 2 0 2;
+}
+
+
+
+/* CSS */
+.butto {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
 }
