@@ -1,6 +1,6 @@
 class DucksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_duck, only: [:show]
+  before_action :set_duck, only: [:show, :edit, :update]
 
   def index
     @ducks = Duck.all
@@ -10,7 +10,6 @@ class DucksController < ApplicationController
   def show
     authorize @duck
   end
-
 
   def new
     @duck = Duck.new
@@ -27,6 +26,16 @@ class DucksController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    authorize @duck
+  end
+
+  def update
+    authorize @duck
+    @duck.update(duck_params)
+    redirect_to duck_path(@duck)
   end
 
   private

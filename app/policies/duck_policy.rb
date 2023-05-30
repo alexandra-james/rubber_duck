@@ -11,10 +11,18 @@ class DuckPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    create?
   end
 
   def create?
     true
+  end
+
+  def edit?
+    update?
+  end
+
+  def update?
+    record.user == user
   end
 end
