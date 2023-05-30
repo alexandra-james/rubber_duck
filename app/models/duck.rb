@@ -3,6 +3,7 @@ class Duck < ApplicationRecord
                "C", "C++", "C#", "PHP", "TypeScript", "Swift", "Dart"]
 
   belongs_to :user
+  has_many :bookings
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true, length: { minimum: 10, maximum: 500 }
