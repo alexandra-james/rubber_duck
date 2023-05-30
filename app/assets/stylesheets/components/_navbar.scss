@@ -1,5 +1,5 @@
 
-.container{
+.navbar-conainer{
   justify-content: center;
   margin: 0 auto;
 }
@@ -33,7 +33,6 @@ display: flex;
   -webkit-user-select: none;
   touch-action: manipulation;
   border-radius: 12px;
-
   margin: 0 20px;
 }
 
@@ -53,7 +52,6 @@ display: flex;
 .navbar-item:hover:after {
   top: 0px;
   left: 0px;
-
 }
 
 @media (min-width: 768px) {
