@@ -1,15 +1,14 @@
-<div class="container">
-  <div class="card-trip">
-    <img src="https://hips.hearstapps.com/hmg-prod/images/how-to-keep-ducks-call-ducks-1615457181.jpg?crop=0.669xw:1.00xh;0.166xw,0&resize=1200:*" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Rubber Duck UK</h2>
-        <p>Rails Duck!</p>
-        <p>Locattion: UK</p>
-        <h2 class="card-trip-pricing">16€</h2>
+<div class="cards-container">
+  <% @ducks.each do |duck| %>
+    <div class="card-trip">
+      <%= image_tag duck.image_url %>
+      <div class="card-infos">
+        <div>
+          <h2> <%= duck.name %> </h2>
+          <p> <%= duck.language %> </p>
+          <h2 class="card-trip-pricing"> <%= duck.price %>€</h2>
+        </div>
       </div>
-
-
     </div>
-  </div>
+  <% end %>
 </div>

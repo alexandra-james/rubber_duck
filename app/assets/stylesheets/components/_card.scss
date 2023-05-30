@@ -1,0 +1,44 @@
+.container{
+  justify-content: center;
+  margin: 0 auto;
+}
+.card-trip {
+  overflow: hidden;
+
+  width: 300px;
+  height: 400px;
+  border-radius: 12px;
+}
+
+.card-trip > img {
+  height: 300px;
+  width: 300px;
+  border-radius: 12px;
+  object-fit: fill;
+
+
+
+
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-infos {
+  padding-top: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin: 0 0;
+}
