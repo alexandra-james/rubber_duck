@@ -1,2 +1,14 @@
-<h1>Ducks#index</h1>
-<p>Find me in app/views/ducks/index.html.erb</p>
+<div class="cards-container">
+  <% @ducks.each do |duck| %>
+    <div class="card-trip">
+      <%= image_tag duck.image_url %>
+      <div class="card-infos">
+        <div>
+          <h2> <%= duck.name %> </h2>
+          <p> <%= duck.language %> </p>
+          <h2 class="card-trip-pricing"> <%= duck.price %>€</h2>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

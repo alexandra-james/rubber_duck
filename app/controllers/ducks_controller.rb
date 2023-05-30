@@ -1,4 +1,5 @@
 class DucksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_duck, only: [:show]
 
   def index
@@ -9,6 +10,7 @@ class DucksController < ApplicationController
   def show
     authorize @duck
   end
+
 
   def new
     @duck = Duck.new

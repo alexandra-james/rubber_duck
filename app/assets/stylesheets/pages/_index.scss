@@ -1,2 +1,14 @@
 // Import page-specific CSS files here.
-@import "home";
+//@import "home";
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 16px;
+  margin: 16px;
+}
+
+
+// display: grid;
+//   grid-template-columns: 1fr 1fr 1fr 1fr;
+//   grid-template-rows: auto;
