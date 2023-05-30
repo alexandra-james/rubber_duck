@@ -1,5 +1,6 @@
 class DucksController < ApplicationController
   def index
+    @ducks = Duck.all
     @ducks = policy_scope(Duck)
   end
 
