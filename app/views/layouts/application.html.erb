@@ -15,7 +15,7 @@
   <div class="navbar">
 
     <div class="logo-name">
-      <a class="navbar-img" href=""><img src="https://raw.githubusercontent.com/RubberDuckDebugging/rubberduckdebugging.github.io/master/images/rubberducky.png" alt="">
+      <a class="navbar-img" href=""><img src="https://raw.githubusercontent.com/RubberDuckDebugging/rubberduckdebugging.github.io/master/images/rubberducky.png" alt=""> </a>
       <h3 id="header-text">Duck on Demand</h3>
     </div>
 
@@ -23,8 +23,9 @@
       <%= link_to "Home", root_path, class:"navbar-item" %>
       <% if user_signed_in? %>
         <%# <%= link_to "Bookings", _path class:"navbar-item" %>
+        <%= link_to "Create new duck", new_duck_path, class:"navbar-item" %>
         <%= link_to "Logout", destroy_user_session_path,
-            data: {turbo_method: :delete} %>
+            data: {turbo_method: :delete}, class:"navbar-item"  %>
 
 
       <% else %>
