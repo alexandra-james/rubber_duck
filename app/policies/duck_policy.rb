@@ -25,4 +25,8 @@ class DuckPolicy < ApplicationPolicy
   def update?
     record.user == user
   end
+
+  def delete?
+    record.user == user
+  end
 end
