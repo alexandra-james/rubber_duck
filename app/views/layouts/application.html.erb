@@ -14,34 +14,30 @@
 
   <body>
     <div class="navbar-container">
-  <div class="index-navbar">
-
-    <div class="logo-name">
-      <a class="navbar-img" href=""><img src="https://raw.githubusercontent.com/RubberDuckDebugging/rubberduckdebugging.github.io/master/images/rubberducky.png" alt=""> </a>
-      <h3 id="header-text">Duck on Demand</h3>
-    </div>
-
-    <div>
-      <%= link_to "Home", root_path, class:"navbar-item" %>
-      <% if user_signed_in? %>
-        <%# <%= link_to "Bookings", _path class:"navbar-item" %>
-        <%= link_to "Create new duck", new_duck_path, class:"navbar-item" %>
-        <%= link_to "Logout", destroy_user_session_path,
-            data: {turbo_method: :delete}, class:"navbar-item"  %>
-
-
-      <% else %>
-        <%= link_to "Login", new_user_session_path, class:"navbar-item" %>
-      <% end  %>
-
-      <input class ="navbar-item" type="text" placeholder="Search..">
-
+      <div class="index-navbar">
+        <div class="logo-name">
+          <a class="navbar-img" href=""><img src="https://raw.githubusercontent.com/RubberDuckDebugging/rubberduckdebugging.github.io/master/images/rubberducky.png" alt=""> </a>
+          <h3 id="header-text">Duck on Demand</h3>
+        </div>
+        <div class="navbar-buttons">
+          <%= link_to "Home", root_path, class:"navbar-item" %>
+          <% if user_signed_in? %>
+            <%# <%= link_to "Bookings", _path class:"navbar-item" %>
+            <%= link_to "Create new duck", new_duck_path, class:"navbar-item" %>
+            <%= link_to "Logout", destroy_user_session_path,
+                data: {turbo_method: :delete}, class:"navbar-item"  %>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, class:"navbar-item" %>
+          <% end  %>
+          <input class ="navbar-item" type="text" placeholder="Search..">
+        </div>
+      </div>
+      <hr>
     </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= render "shared/flashes" %>
     <%= yield %>
-
     <div class="footer-wrapper">
       <hr>
       <div class="footer">
