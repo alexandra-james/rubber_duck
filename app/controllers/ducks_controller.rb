@@ -5,6 +5,12 @@ class DucksController < ApplicationController
   def index
     @ducks = Duck.all
     @ducks = policy_scope(Duck)
+    @markers = @ducks.geocoded.map do |duck|
+      {
+        lat: duck.latitude,
+        lng: duck.longitude
+      }
+    end
   end
 
   def show
