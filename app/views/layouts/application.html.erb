@@ -15,18 +15,18 @@
   <div class="navbar">
 
     <div class="logo-name">
-      <a class="navbar-img" href=""><img src="https://raw.githubusercontent.com/RubberDuckDebugging/rubberduckdebugging.github.io/master/images/rubberducky.png" alt=""></a>
+      <a class="navbar-img" href=""><img src="https://raw.githubusercontent.com/RubberDuckDebugging/rubberduckdebugging.github.io/master/images/rubberducky.png" alt="">
       <h3 id="header-text">Duck on Demand</h3>
     </div>
 
     <div>
-      <a class="navbar-item" href="#">Home</a>
+      <%= link_to "Home", root_path, class:"navbar-item" %>
       <% if user_signed_in? %>
-        <a class="navbar-item" href="#">Bookings</a>
-        <a class="navbar-item" href="#">Logout</a>
+        <%= link_to "Bookings", _path class:"navbar-item" %>
+        <%= link_to "Logout", destroy_user_session_path, class:"navbar-item" %>
 
       <% else %>
-        <a class="navbar-item" href="#">Login</a>
+        <%= link_to "Login", class:"navbar-item" %>
       <% end  %>
 
       <input class ="navbar-item" type="text" placeholder="Search..">
