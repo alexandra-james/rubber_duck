@@ -7,4 +7,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   # validates :first_name, presence: true, length: { maximum: 20 }
   # validates :last_name, presence: true, length: { maximum: 20 }
+
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
