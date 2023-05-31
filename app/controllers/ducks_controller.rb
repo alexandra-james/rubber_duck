@@ -3,8 +3,15 @@ class DucksController < ApplicationController
   before_action :set_duck, only: [:show, :edit, :update, :destroy]
 
   def index
-    @ducks = Duck.all
     @ducks = policy_scope(Duck)
+    @users = User.all
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { user: })
+      }
+    end
   end
 
   def show
