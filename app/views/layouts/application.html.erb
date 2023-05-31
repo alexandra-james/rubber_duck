@@ -9,11 +9,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "/assets/application.js", "data-turbo-track": "reload", defer: true %>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
   </head>
 
   <body>
     <div class="navbar-container">
-  <div class="navbar">
+  <div class="index-navbar">
 
     <div class="logo-name">
       <a class="navbar-img" href=""><img src="https://raw.githubusercontent.com/RubberDuckDebugging/rubberduckdebugging.github.io/master/images/rubberducky.png" alt=""> </a>
@@ -34,22 +35,25 @@
       <% end  %>
 
       <input class ="navbar-item" type="text" placeholder="Search..">
+
     </div>
-  </div>
-  <hr>
-
-
-
-</div>
-
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= render "shared/flashes" %>
     <%= yield %>
 
-
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js'></script>
-
-
+    <div class="footer-wrapper">
+      <hr>
+      <div class="footer">
+        <div class="footer-links">
+          <a href="https://github.com/alexandra-james/RUBBER_DUCK"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/RubberDuckBP"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/rubber-duck-ltd/?originalSubdomain=bg"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+          This footer is made with <i class="fas fa-heart"></i> at Duck On Demand
+        </div>
+      </div>
+    </div>
   </body>
 </html>

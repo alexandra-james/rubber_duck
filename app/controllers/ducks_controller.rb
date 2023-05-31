@@ -1,6 +1,6 @@
 class DucksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_duck, only: [:show, :edit, :update]
+  before_action :set_duck, only: [:show, :edit, :update, :destroy]
 
   def index
     @ducks = policy_scope(Duck)
@@ -41,8 +41,17 @@ class DucksController < ApplicationController
 
   def update
     authorize @duck
-    @duck.update(duck_params)
-    redirect_to duck_path(@duck)
+    if @duck.update(duck_params)
+      redirect_to duck_path(@duck)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    authorize @duck
+    @duck.destroy
+    redirect_to ducks_path, status: :see_other
   end
 
   private

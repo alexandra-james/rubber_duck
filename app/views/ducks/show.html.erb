@@ -1,14 +1,21 @@
 
 <div class="container">
-  <h2><%= @duck.name %></h2>
+  <h2 class><%= @duck.name %></h2>
   <div class="card-duck-show">
-    <%= image_tag @duck.image_url %>
+    <div class="card-img-text">
+      <%= image_tag @duck.image_url %>
       <div class="card-infos">
-        <div>
-          <p> Programming language: <%= @duck.language %> </p>
-          <p> Description: <%= @duck.description %> </p>
-          <p class="card-duck-pricing"> Price: <%= @duck.price %>€</p>
-        </div>
+          <p>  Programming language:<br> <%= @duck.language %> </p>
+          <p>  Description: <%= @duck.description %> </p>
+          <p>  Price: <%= @duck.price %>€</p>
       </div>
+    </div>
+    <div class="card-links">
+      <% if policy(@duck).edit? %>
+        <%= link_to "Delete duck", duck_path(@duck),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-ghost"%>
+        <%= link_to "Edit duck", edit_duck_path(@duck), class:"btn-ghost" %>
+      <% end %>
+    </div>
   </div>
 </div>
