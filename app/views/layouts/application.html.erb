@@ -33,17 +33,24 @@
       <% end  %>
 
       <input class ="navbar-item" type="text" placeholder="Search..">
+
     </div>
-  </div>
-  <hr>
-
-
-
-</div>
-
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= render "shared/flashes" %>
     <%= yield %>
+    <div class="footer-wrapper">
+      <hr>
+      <div class="footer">
+        <div class="footer-links">
+          <a href="https://github.com/alexandra-james/RUBBER_DUCK"><i class="fab fa-github"></i></a>
+          <a href="https://twitter.com/RubberDuckBP"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/rubber-duck-ltd/?originalSubdomain=bg"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+          This footer is made with <i class="fas fa-heart"></i> at Duck On Demand
+        </div>
+      </div>
+    </div>
   </body>
 </html>
