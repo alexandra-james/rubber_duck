@@ -1,12 +1,12 @@
 <div class="cards-container">
   <% @ducks.each do |duck| %>
-    <div class="card-trip">
+    <div class="card-duck">
       <%= image_tag duck.image_url %>
       <div class="card-infos">
         <div>
           <h2> <%= duck.name %> </h2>
           <p> <%= duck.language %> </p>
-          <h2 class="card-trip-pricing"> <%= duck.price %>€</h2>
+          <h2 class="card-duck-pricing"> <%= duck.price %>€</h2>
         </div>
       </div>
     </div>

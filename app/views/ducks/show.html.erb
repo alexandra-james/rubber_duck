@@ -1,1 +1,14 @@
-<%= duck %>
+
+<div class="container">
+  <h2><%= @duck.name %></h2>
+  <div class="card-duck-show">
+    <%= image_tag @duck.image_url %>
+      <div class="card-infos">
+        <div>
+          <p> Programming language: <%= @duck.language %> </p>
+          <p> Description: <%= @duck.description %> </p>
+          <p class="card-duck-pricing"> Price: <%= @duck.price %>€</p>
+        </div>
+      </div>
+  </div>
+</div>
