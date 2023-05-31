@@ -6,6 +6,11 @@
 
 .logo-name {
 display: flex;
+
+}
+.logo-name > h3 {
+  padding-left: 12px;
+  margin-top: 10px;
 }
 
 .navbar {
