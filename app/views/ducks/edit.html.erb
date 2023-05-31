@@ -1,0 +1,10 @@
+<h1>Update <%= @duck.name %></h1>
+
+<%= simple_form_for(@duck) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :language, collection: Duck::LANGUAGES %>
+  <%= f.input :price %>
+  <%= f.input :image_url %>
+  <%= f.submit %>
+<% end %>
