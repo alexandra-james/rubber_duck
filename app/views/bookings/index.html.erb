@@ -3,26 +3,29 @@
 <div class="bookings-container">
   <div class="wrapper-owner-bookings">
     <%# TO DO: small card with image, name duck, booking status, name customer %>
-    <% @bookings.each do |booking| %>
-      <% if booking.user == current_user %>
+    <div class="owner-cards">
+      <% @bookings.each do |booking| %>
+        <% if booking.duck.user == current_user %>
+          <p>Customer: <%= booking.user.first_name %></p>
+          <p>Duck: <%= booking.duck.name %></p>
+          <p>Owner: <%= booking.duck.user.first_name %></p>
+          <p>Status: <%= booking.status %></p>
+        <% end %>
+      <% end %>
+    </div> <!-- end owner-cards-->
+  </div> <!-- end wrapper-owner-booking-->
+  <div class="wrapper-customer-bookings">
+    <%# TO DO: small card with image, name duck, booking status, name customer %>
+    <div class="customer-cards">
+      <% @bookings.each do |booking| %>
+        <% if booking.user == current_user %>
         <p>Customer: <%= booking.user.first_name %></p>
         <p>Duck: <%= booking.duck.name %></p>
         <p>Owner: <%= booking.duck.user.first_name %></p>
         <p>Status: <%= booking.status %></p>
+        <% end %>
       <% end %>
-    <% end %>
-  </div> <!-- end wrapper-owner-booking-->
-  <div class="wrapper-customer-bookings">
-    <%# TO DO: small card with image, name duck, booking status, name customer %>
-    <% @bookings.each do |booking| %>
-      <% if booking.user == current_user %>
-      <p>Customer: <%= booking.user.first_name %></p>
-      <p>Duck: <%= booking.duck.name %></p>
-      <p>Owner: <%= booking.duck.user.first_name %></p>
-      <p>Status: <%= booking.status %></p>
-      <% end %>
-    <% end %>
-
+    </div> <!-- end customer-cards-->
   </div> <!-- end wrapper-customer-booking-->
 </div> <!-- end bookings-container-->
 
