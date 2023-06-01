@@ -15,12 +15,14 @@
   <body>
     <div class="navbar-container">
       <div class="index-navbar">
-        <div class="logo-name">
-          <a class="navbar-img" href=""><img src="https://raw.githubusercontent.com/RubberDuckDebugging/rubberduckdebugging.github.io/master/images/rubberducky.png" alt=""> </a>
+       <%= link_to root_path do %>
+       <div class="logo-name">
+          <%= image_tag "https://raw.githubusercontent.com/RubberDuckDebugging/rubberduckdebugging.github.io/master/images/rubberducky.png", class:"navbar-img" %>
           <h3 id="header-text">Duck on Demand</h3>
         </div>
+        <% end %>
         <div class="navbar-buttons">
-          <%= link_to "Home", root_path, class:"navbar-item" %>
+          <%= link_to "All ducks", ducks_path, class:"navbar-item" %>
           <% if user_signed_in? %>
             <%# <%= link_to "Bookings", _path class:"navbar-item" %>
             <%= link_to "Create new duck", new_duck_path, class:"navbar-item" %>
