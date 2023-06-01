@@ -20,4 +20,18 @@ class BookingsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def accept_booking
+  # link to this method and then the update method from bookings index page -> button "accept booking"
+  # set booking - params?
+    authorize @booking
+    @booking.status = true
+  end
+
+  def update
+    # set booking
+    authorize @booking
+    @booking.update
+  end
+
 end
