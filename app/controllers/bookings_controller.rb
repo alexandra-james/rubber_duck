@@ -11,5 +11,13 @@ class BookingsController < ApplicationController
   end
 
   def create
+    duck_id = params[:duck_id]
+    @booking = Booking.new(user_id: current_user.id, duck_id: duck_id)
+    authorize @booking
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 end

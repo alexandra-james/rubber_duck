@@ -16,8 +16,10 @@
         data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-ghost"%>
         <%= link_to "Edit duck", edit_duck_path(@duck), class:"btn-ghost" %>
       <% end %>
-      <%# TO DO - owners cannot book their own ducks %>
-      <%= link_to "Book duck", new_duck_booking_path(@duck), class:"btn-ghost" %>
+      <%# owners cannot book their own ducks %>
+      <% unless @duck.bookings.any? || @duck.user == current_user %>
+        <%= link_to "Book duck", new_duck_booking_path(@duck), class:"btn-ghost" %>
+      <% end %>
     </div>
   </div>
 </div>
