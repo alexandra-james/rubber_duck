@@ -1,0 +1,6 @@
+<h1>You're about to book <%= @duck.name %>!</h1>
+
+<%= simple_form_for [@duck, @booking] do |f| %>
+  <%= f.input :user_id, value: current_user.id, placeholder: current_user.first_name, input_html: { disabled: true }  %>
+  <%= f.submit %>
+<% end %>
