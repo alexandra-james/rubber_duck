@@ -4,9 +4,9 @@
   <div class="wrapper-owner-bookings">
     <%# TO DO: small card with image, name duck, booking status, name customer %>
     <% @bookings.each do |booking| %>
-      <p>Customer: <%= booking.user %></p>
-      <p>Duck: <%= booking.duck %></p>
-      <p>Owner: <%= booking.duck.user %></p>
+      <p>Customer: <%= booking.user.first_name %></p>
+      <p>Duck: <%= booking.duck.name %></p>
+      <p>Owner: <%= booking.duck.user.first_name %></p>
       <p>Status: <%= booking.status %></p>
     <% end %>
   </div> <!-- end wrapper-owner-booking-->
