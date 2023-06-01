@@ -4,14 +4,25 @@
   <div class="wrapper-owner-bookings">
     <%# TO DO: small card with image, name duck, booking status, name customer %>
     <% @bookings.each do |booking| %>
-    
+      <% if booking.user == current_user %>
+        <p>Customer: <%= booking.user.first_name %></p>
+        <p>Duck: <%= booking.duck.name %></p>
+        <p>Owner: <%= booking.duck.user.first_name %></p>
+        <p>Status: <%= booking.status %></p>
+      <% end %>
+    <% end %>
+  </div> <!-- end wrapper-owner-booking-->
+  <div class="wrapper-customer-bookings">
+    <%# TO DO: small card with image, name duck, booking status, name customer %>
+    <% @bookings.each do |booking| %>
+      <% if booking.user == current_user %>
       <p>Customer: <%= booking.user.first_name %></p>
       <p>Duck: <%= booking.duck.name %></p>
       <p>Owner: <%= booking.duck.user.first_name %></p>
       <p>Status: <%= booking.status %></p>
+      <% end %>
     <% end %>
-  </div> <!-- end wrapper-owner-booking-->
-  <div class="wrapper-customer-bookings">
+
   </div> <!-- end wrapper-customer-booking-->
 </div> <!-- end bookings-container-->
 
