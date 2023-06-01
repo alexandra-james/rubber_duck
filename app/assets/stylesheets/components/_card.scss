@@ -30,24 +30,38 @@
 
 
 .card-duck .card-infos {
-  padding-top: 5%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
-  margin: 0 0;
 }
 
 .card-duck-show {
   overflow: hidden;
-  width: 500px;
-  height: 500px;
+  width: 800px;
+  height: 400px;
   border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.card-duck-show > img {
+.card-img-text > img {
   height: 300px;
   width: 300px;
   border-radius: 12px;
   object-fit: fill;
+}
+.card-img-text{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 10px;
+
+}
+
+.card-infos {
+  padding-left: 12px;
+}
+
+.card-links {
+  margin: 10px;
 }

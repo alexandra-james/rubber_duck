@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'ducks/index'
   devise_for :users
-  root to: "ducks#index"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
   resources :ducks
+  resources :bookings, only: [:index, :show]
+
   # Defines the root path route ("/")
-  #root "pages#index"
+  # root "pages#index"
+  root to: "ducks#index"
 end
