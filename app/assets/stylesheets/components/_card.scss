@@ -13,7 +13,12 @@
   height: 300px;
   width: 300px;
   border-radius: 12px;
-  object-fit: fill;
+  object-fit:cover;
+}
+
+.card-duck:hover {
+  filter: brightness(70%);
+  transition: ease-in-out;
 }
 
 .card-duck h2 {
@@ -26,6 +31,16 @@
   font-size: 12px;
   opacity: .7;
   margin: 0;
+}
+
+.card-duck-pricing {
+  padding-right: 5px;
+  position:absolute;
+  top:0;
+  right:0;
+  padding-top: 12px;
+
+
 }
 
 

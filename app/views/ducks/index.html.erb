@@ -7,9 +7,11 @@
         <div class="card-infos">
           <div>
             <h2> <%= duck.name %> </h2>
-            <p> <%= duck.language %> </p>
-            <h2 class="card-duck-pricing"> <%= duck.price %>€</h2>
+            <p> <strong> Language: </strong> <%= duck.language %> </p>
+            <p> <strong> Location: </strong> <%= duck.user.location  %> </p>
+
           </div>
+          <h2 class="card-duck-pricing"> <%= duck.price %>€</h2>
         </div>
       </div>
     <% end %>
