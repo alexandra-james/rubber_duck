@@ -80,3 +80,13 @@
 .card-links {
   margin: 10px;
 }
+
+.bookings-container{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.wrapper-customer-bookings {
+  border: 1px solid red;
+}
