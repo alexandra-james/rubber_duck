@@ -8,7 +8,7 @@
           <div>
             <h2> <%= duck.name %> </h2>
             <p> <strong> Language: </strong> <%= duck.language %> </p>
-            <p> <strong> Location: </strong> <%= duck.user.location  %> </p>
+            <p> <%= duck.user.location  %> </p>
 
           </div>
           <h2 class="card-duck-pricing"> <%= duck.price %>€</h2>
@@ -23,3 +23,4 @@
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
