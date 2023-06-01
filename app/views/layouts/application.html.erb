@@ -24,7 +24,7 @@
         <div class="navbar-buttons">
           <%= link_to "All ducks", ducks_path, class:"navbar-item" %>
           <% if user_signed_in? %>
-            <%# <%= link_to "Bookings", _path class:"navbar-item" %>
+            <%= link_to "Bookings", bookings_path, class:"navbar-item" %>
             <%= link_to "Create new duck", new_duck_path, class:"navbar-item" %>
             <%= link_to "Logout", destroy_user_session_path,
                 data: {turbo_method: :delete}, class:"navbar-item"  %>
@@ -41,7 +41,6 @@
     <%= render "shared/flashes" %>
     <%= yield %>
     <div class="footer-wrapper">
-      <hr>
       <div class="footer">
         <div class="footer-links">
           <a href="https://github.com/alexandra-james/RUBBER_DUCK"><i class="fab fa-github"></i></a>
