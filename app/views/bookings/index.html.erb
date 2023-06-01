@@ -8,6 +8,7 @@
       <p>Duck: <%= booking.duck.name %></p>
       <p>Owner: <%= booking.duck.user.first_name %></p>
       <p>Status: <%= booking.status %></p>
+      <%= link_to "Accept", edit_booking_path(booking), class:"btn-ghost" %>
     <% end %>
   </div> <!-- end wrapper-owner-booking-->
   <div class="wrapper-customer-bookings">

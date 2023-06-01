@@ -15,11 +15,7 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
-  def accept_booking?
-    record.duck.user == user
-  end
-
-  def update?
+  def edit?
     record.duck.user == user
   end
 end

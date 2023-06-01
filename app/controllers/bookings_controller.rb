@@ -21,17 +21,11 @@ class BookingsController < ApplicationController
     end
   end
 
-  def accept_booking
-  # link to this method and then the update method from bookings index page -> button "accept booking"
-  # set booking - params?
+  def edit
+    @booking = Booking.find(params[:id])
     authorize @booking
     @booking.status = true
+    @booking.save
+    head :no_content
   end
-
-  def update
-    # set booking
-    authorize @booking
-    @booking.update
-  end
-
 end
