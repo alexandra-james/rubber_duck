@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [:index, :show, :edit, :update, :destroy]
 
   # Defines the root path route ("/")
-  # root "pages#index"
-  root to: "ducks#index"
+  root to: "pages#home"
+  # root to: "ducks#index"
 end
