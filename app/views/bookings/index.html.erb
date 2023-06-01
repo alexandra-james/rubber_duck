@@ -1,2 +1,15 @@
 <h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+
+<div class="bookings-container">
+  <div class="wrapper-owner-bookings">
+    <%# TO DO: small card with image, name duck, booking status, name customer %>
+    <% @bookings.each do |booking| %>
+      <p>Customer: <%= booking.user %></p>
+      <p>Duck: <%= booking.duck %></p>
+      <p>Owner: <%= booking.duck.user %></p>
+      <p>Status: <%= booking.status %></p>
+    <% end %>
+  </div> <!-- end wrapper-owner-booking-->
+  <div class="wrapper-customer-bookings">
+  </div> <!-- end wrapper-customer-booking-->
+</div> <!-- end bookings-container-->
