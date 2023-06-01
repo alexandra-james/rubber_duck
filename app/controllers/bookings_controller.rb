@@ -28,4 +28,11 @@ class BookingsController < ApplicationController
     @booking.save
     head :no_content
   end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to bookings_path, status: :see_other
+  end
 end

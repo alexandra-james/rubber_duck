@@ -18,4 +18,8 @@ class BookingPolicy < ApplicationPolicy
   def edit?
     record.duck.user == user
   end
+
+  def destroy?
+    record.duck.user == user
+  end
 end
