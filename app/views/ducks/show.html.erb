@@ -8,6 +8,7 @@
           <p>  Programming language:<br> <%= @duck.language %> </p>
           <p>  Description: <%= @duck.description %> </p>
           <p>  Price: <%= @duck.price %>€</p>
+          <p>  Availability: <%= @duck.bookings.any? ? "Booked" : "Free" %></p>
       </div>
     </div>
     <div class="card-links">
