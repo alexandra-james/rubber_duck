@@ -20,4 +20,19 @@ class BookingsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.status = true
+    @booking.save
+    head :no_content
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to bookings_path, status: :see_other
+  end
 end
