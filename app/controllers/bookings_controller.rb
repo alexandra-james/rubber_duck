@@ -29,7 +29,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = true
     @booking.save
-    head :no_content
+    redirect_to bookings_path
   end
 
   def destroy
