@@ -14,9 +14,35 @@ align-items: flex-end;
   // margin-top: 10px;
 }
 
+.button-navbar {
+  margin-top: 12px;
+}
+
 .index-navbar {
   display: flex;
   justify-content: space-around;
+  margin-top: 16px;
+}
+
+.searchbar {
+  padding: 10.7px 24px 10.7px;
+  border-radius: 12px;
+  border: 1px solid black;
+  margin-right: 4px;
+  position: absolute;
+  top:16px;
+  right: 20px;
+}
+
+.btn-search {
+  border-radius: 12px;
+  padding: 10.7px 16px 10.7px;
+  border: 1px solid black;
+  background-color: #ffe54c;
+  position: absolute;
+  top: 16px;
+  right: 0px;
+  margin-right: 8px;
 }
 
 .navbar-img {

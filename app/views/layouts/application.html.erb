@@ -21,7 +21,7 @@
           <h3 id="header-text">Duck on Demand</h3>
         </div>
         <% end %>
-        <div class="navbar-buttons">
+        <div class="button-navbar">
           <%= link_to "All ducks", ducks_path, class:"navbar-item" %>
           <% if user_signed_in? %>
             <%= link_to "Bookings", bookings_path, class:"navbar-item" %>
@@ -31,7 +31,23 @@
           <% else %>
             <%= link_to "Login", new_user_session_path, class:"navbar-item" %>
           <% end  %>
-          <input class ="navbar-item" type="text" placeholder="Search..">
+          <%# <input class ="navbar-item" type="text" placeholder="Search.."> %>
+
+            <%= form_with url: ducks_path, method: :get, class: "d-flex" do %>
+                          <%= text_field_tag :query,
+                                params[:query],
+                                class: "searchbar",
+                                placeholder: " "
+                            %>
+                          <%= submit_tag "Search", name: "", class: "btn-search" %>
+                        <% end %>
+        </div>
+          <div class="row justify-content-center">
+          <div class="col-sm-8 my-3">
+
+
+  </div>
+</div>
         </div>
       </div>
       <hr>

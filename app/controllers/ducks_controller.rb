@@ -4,6 +4,9 @@ class DucksController < ApplicationController
 
   def index
     @ducks = policy_scope(Duck)
+    if params[:query].present?
+      @ducks = @ducks.search_by_title_and_langurage(params[:query])
+    end
     @users = User.all
     @markers = @users.geocoded.map do |user|
       {
