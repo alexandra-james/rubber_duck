@@ -19,3 +19,30 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
+.middle{
+  background-color:  hsl(51, 84%, 75%);
+  padding: 130px;
+  text-align: center;
+}
+
+.button {
+  background-color:white;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 20px;
+  align-items: center;
+}
+
+.button:hover {
+  opacity: 1;
+}
