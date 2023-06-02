@@ -5,8 +5,9 @@
     <div class="card-img-text">
       <%= image_tag @duck.image_url %>
       <div class="card-infos">
-          <p>  Programming language:<br> <%= @duck.language %> </p>
+          <p>  Programming language: <%= @duck.language %> </p>
           <p>  Description: <%= @duck.description %> </p>
+          <p>  Owner: <%= @duck.user.first_name %> </p>
           <p>  Price: <%= @duck.price %>€</p>
           <p>  Availability: <%= @duck.bookings.any? ? "Booked" : "Free" %></p>
       </div>
