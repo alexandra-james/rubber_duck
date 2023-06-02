@@ -3,7 +3,7 @@ class BookingPolicy < ApplicationPolicy
     def resolve
       # users should only see the bookings of their ducks OR their own bookings
       # scope.where(record.duck.user == user || record.user == user)
-      scope.all
+      scope.where(user: user)
     end
   end
 

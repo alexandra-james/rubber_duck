@@ -14,7 +14,7 @@
     <div class="card-links">
       <% if policy(@duck).edit? %>
         <%= link_to "Delete duck", duck_path(@duck),
-        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-ghost"%>
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-red"%>
         <%= link_to "Edit duck", edit_duck_path(@duck), class:"btn-ghost" %>
       <% end %>
       <%# owners cannot book their own ducks %>
