@@ -7,8 +7,8 @@
           <p>Customer: <%= booking.user.first_name %></p>
           <p>Duck: <%= booking.duck.name %></p>
           <p>Owner: <%= booking.duck.user.first_name %></p>
-          <p>Comment: <%= booking.comment %></p>
           <p>Status: <%= booking.status == false ? "Pending" : "Booked" %></p>
+          <p>Comment: <%= booking.comment %></p>
           <% if booking.status == false %>
             <%= link_to "Accept", edit_booking_path(booking), class:"btn-green" %>
             <%= link_to "Reject", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-red"%>
@@ -29,8 +29,8 @@
             <p>Customer: <%= booking.user.first_name %></p>
             <p>Duck: <%= booking.duck.name %></p>
             <p>Owner: <%= booking.duck.user.first_name %></p>
-            <p>Comment: <%= booking.comment %></p>
             <p>Status: <%= booking.status == false ? "Pending" : "Booked" %></p>
+            <p>Comment: <%= booking.comment %></p>
             <% if booking.status == true %>
               <%= link_to "End booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-red"%>
             <% end %>
