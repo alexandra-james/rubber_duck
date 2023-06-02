@@ -1,10 +1,13 @@
-<h1>Create a new duck</h1>
-
-<%= simple_form_for(@duck) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :language, collection: Duck::LANGUAGES %>
-  <%= f.input :price %>
-  <%= f.input :image_url %>
-  <%= f.submit %>
-<% end %>
+<div class="form-container">
+  <div class="ducks-form">
+    <h1>Create a new duck</h1>
+    <%= simple_form_for(@duck) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :language, collection: Duck::LANGUAGES %>
+      <%= f.input :price %>
+      <%= f.input :image_url %>
+      <%= f.submit 'Create', class: "btn-ghost" %>
+    <% end %>
+</div>
+</div>

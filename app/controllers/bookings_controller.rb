@@ -1,7 +1,9 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
     @bookings = policy_scope(Booking)
+    duck_ids = Duck.where(user_id: current_user).pluck(:id) # get all the duck ids where the owner is the current user
+    # pluck returns the values of the column you specify
+    @duck_bookings = Booking.where(duck_id: duck_ids)
   end
 
   def new

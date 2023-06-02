@@ -8,6 +8,40 @@
   transition: opacity 0.3s ease;
 }
 
+.btn-ghost-slim {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 5px auto;
+  display: inline-block;
+}
+
+
 .btn-ghost:hover {
   opacity: 1;
 }
+
+.btn-green {
+color: #6D972E;
+  border: 1px solid #6D972E;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+
+.btn-red {
+    color: #97010E;
+    border: 1px solid #97010E;
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+  }
