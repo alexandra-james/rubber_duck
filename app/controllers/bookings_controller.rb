@@ -13,8 +13,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    duck_id = params[:duck_id]
-    @booking = Booking.new(user_id: current_user.id, duck_id: duck_id, comment: params[:booking][:comment])
+    @booking = Booking.new(bookings_params)
+    @booking.duck = Duck.find(params[:duck_id])
+    @booking.user = current_user
     authorize @booking
     if @booking.save
       redirect_to bookings_path
@@ -36,5 +37,11 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.destroy
     redirect_to bookings_path, status: :see_other
+  end
+
+  private
+
+  def bookings_params
+    params.require(:booking).permit(:comment)
   end
 end
