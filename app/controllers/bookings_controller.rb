@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
 
   def create
     duck_id = params[:duck_id]
-    @booking = Booking.new(user_id: current_user.id, duck_id: duck_id)
+    @booking = Booking.new(user_id: current_user.id, duck_id: duck_id, comment: params[:booking][:comment])
     authorize @booking
     if @booking.save
       redirect_to bookings_path
