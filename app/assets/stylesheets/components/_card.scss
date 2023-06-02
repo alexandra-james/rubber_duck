@@ -75,18 +75,47 @@
 
 .card-infos {
   padding-left: 12px;
+  z-index: 2;
 }
 
 .card-links {
   margin: 10px;
 }
 
-.bookings-container{
+.bookings-container {
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
 
 }
 .wrapper-customer-bookings {
-  border: 1px solid red;
+
+  width: 400px;
+}
+
+.wrapper-owner-bookings {
+
+  width: 400px;
+}
+
+.bookings-cards {
+  position: relative;
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin: 12px 12px;
+  padding: 12px;
+}
+
+.bookings-cards > img{
+  border-radius: 12px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 150px;
+  height: 150px;
+  object-fit:cover;
+}
+
+.bookings-header {
+  text-align: center;
 }

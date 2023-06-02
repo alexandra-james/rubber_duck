@@ -1,37 +1,48 @@
-<h1>Bookings</h1>
-
 <div class="bookings-container">
   <div class="wrapper-owner-bookings">
-    <div class="owner-cards">
+
+      <h2 class="bookings-header">Booking requests</h2>
+      <% @duck_bookings.each do |booking| %>
+        <div class="bookings-cards">
+          <p>Customer: <%= booking.user.first_name %></p>
+          <p>Duck: <%= booking.duck.name %></p>
+          <p>Owner: <%= booking.duck.user.first_name %></p>
+          <p>Status: <%= booking.status == false ? "Pending" : "Booked" %></p>
+          <% if booking.status == false %>
+              <p>Comment: <%= booking.comment %></p>
+            <% end %>
+          <% if booking.status == false %>
+            <%= link_to "Accept", edit_booking_path(booking), class:"btn-green" %>
+            <%= link_to "Reject", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-red"%>
+          <% end %>
+          <% if booking.status == true %>
+            <%= link_to "End booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-red"%>
+          <% end %>
+          <%= image_tag booking.duck.image_url, class: "booking-image" %>
+        </div> <!-- end owner-cards-->
+      <% end %>
+
+  </div> <!-- end wrapper-owner-booking-->
+  <div class="wrapper-customer-bookings">
+      <h2 class="bookings-header">Your bookings</h2>
       <% @bookings.each do |booking| %>
-        <% if booking.duck.user == current_user %>
+        <% if booking.user == current_user %>
+          <div class="bookings-cards">
             <p>Customer: <%= booking.user.first_name %></p>
             <p>Duck: <%= booking.duck.name %></p>
             <p>Owner: <%= booking.duck.user.first_name %></p>
             <p>Status: <%= booking.status == false ? "Pending" : "Booked" %></p>
-            <% if booking.status == false && booking.duck.user == current_user %>
-              <%= link_to "Accept", edit_booking_path(booking), class:"btn-ghost" %>
-              <%= link_to "Reject", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-ghost"%>
+            <% if booking.status == false %>
+              <p>Comment: <%= booking.comment %></p>
             <% end %>
             <% if booking.status == true %>
-              <%= link_to "End booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-ghost"%>
+              <%= link_to "End booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn-red"%>
             <% end %>
+              <%= image_tag booking.duck.image_url, class: "booking-image" %>
+
+          </div><!-- end bookings-cards-->
         <% end %>
       <% end %>
-    </div> <!-- end owner-cards-->
-  </div> <!-- end wrapper-owner-booking-->
-  <div class="wrapper-customer-bookings">
-    <div class="customer-cards">
-      <% @bookings.each do |booking| %>
-        <% if booking.user == current_user %>
-        <p>Customer: <%= booking.user.first_name %></p>
-        <p>Duck: <%= booking.duck.name %></p>
-        <p>Owner: <%= booking.duck.user.first_name %></p>
-        <p>Status: <%= booking.status %></p>
-        <% end %>
-      <% end %>
-    </div> <!-- end customer-cards-->
+
   </div> <!-- end wrapper-customer-booking-->
 </div> <!-- end bookings-container-->
-
-<!--

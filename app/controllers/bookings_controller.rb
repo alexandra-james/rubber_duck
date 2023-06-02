@@ -1,7 +1,9 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
     @bookings = policy_scope(Booking)
+    duck_ids = Duck.where(user_id: current_user).pluck(:id) # get all the duck ids where the owner is the current user
+    # pluck returns the values of the column you specify
+    @duck_bookings = Booking.where(duck_id: duck_ids)
   end
 
   def new
@@ -11,8 +13,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    duck_id = params[:duck_id]
-    @booking = Booking.new(user_id: current_user.id, duck_id: duck_id)
+    @booking = Booking.new(bookings_params)
+    @booking.duck = Duck.find(params[:duck_id])
+    @booking.user = current_user
     authorize @booking
     if @booking.save
       redirect_to bookings_path
@@ -26,7 +29,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = true
     @booking.save
-    head :no_content
+    redirect_to bookings_path
   end
 
   def destroy
@@ -34,5 +37,11 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.destroy
     redirect_to bookings_path, status: :see_other
+  end
+
+  private
+
+  def bookings_params
+    params.require(:booking).permit(:comment)
   end
 end
