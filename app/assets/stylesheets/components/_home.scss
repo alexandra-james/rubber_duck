@@ -11,8 +11,6 @@
   font-size: 32px;
   font-weight: bold;
   font-weight: 800;
-
-
 }
 
 .banner p {
@@ -20,17 +18,13 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-
 }
 
 .middle{
-
   background-color:  hsl(51, 84%, 75%);
-
-padding: 130px;
-text-align: center;
+  padding: 130px;
+  text-align: center;
 }
-
 
 .button {
   background-color:white;
@@ -48,7 +42,6 @@ text-align: center;
   border-radius: 20px;
   align-items: center;
 }
-
-.button:hover {opacity: 1;
-
+.button:hover {
+  opacity: 1;
 }
